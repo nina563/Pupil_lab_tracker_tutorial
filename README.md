@@ -15,7 +15,7 @@ This tutorial shows how to create an experiment in Openseame with an integrated 
 
 ## Connecting to the eye-tracking device <div id="heading--2"/>
 
-To connect the laptop/PC to the tracker you will need to connect both devices to the same [local network](https://docs.pupil-labs.com/invisible/real-time-api/tutorials/). For discovery, the local network must allow MDNS and UDP traffic. In large public networks, this may be prohibited for security reasons. Alternitably the hotspot can be created using a third device - not the tracker phone or laptop you are using to run Opensesame.
+To connect the laptop/PC to the tracker you will need to connect both devices to the same [local network](https://docs.pupil-labs.com/invisible/real-time-api/tutorials/). For discovery, the local network must allow MDNS and UDP traffic. In large public networks, this may be prohibited for security reasons. Alternatively, the hotspot can be created using a third device - neither the Companion phone nor the laptop you are using to run Opensesame.
 
 Pupil Lab provides a [real-time API](https://github.com/pupil-labs/realtime-network-api), that allows you to control the tracking device. 
 
@@ -24,7 +24,7 @@ You can use pip to install the library through the Opensesame console:
 pip install pupil-labs-realtime-api
 ```
 
-Opensesame provides **inline_script** item. We will use them to add Python code to the experiment body. Use further code snippet in the "Prepare" phase of the **inline_script** to initilize the tracking device. 
+Opensesame provides `inline_script` item. We will use them to add Python code to the experiment body. Use further code snippet in the **Prepare** phase of the `inline_script` to initialize the tracking device. 
 > To check the IP of the Neon device, go to the settings of the phone, navigate to **About device** -> **Status**, and you will find the IP address.
 
 ```
@@ -39,13 +39,13 @@ print(f"Phone name: {device.phone_name}")
 print(f"Phone unique ID: {device.phone_id}")
 ```
 ## Starting the recording <div id="heading--3"/>
-To start the recording you need to have this code in the “Run” phase of the **inline_script** item:
+To start the recording you need to have this code in the **Run** phase of the  `inline_script` item:
 ```
 recording_id = device.recording_start()
 print(f"Started recording with id {recording_id}”)
 ```
 ## Saving events <div id="heading--4"/>
-While recording is running, you can create events using the save_event. 
+While recording is running, you can create events using the save_event() method. 
 ```
 device.send_event("test event 2", event_timestamp_unix_ns=time.time_ns())
 ```
@@ -63,6 +63,8 @@ After stopping and saving, the recording will automatically uploaded to the Pupi
 
 For defining the surface of the PC screen we use the April Tags 36H11 family. We have 4 tags on the corners of the Opensesame canvas throughout the experiment.
 
+
+
 <p align="center">
   <img width="439" alt="Screenshot 2024-02-14 at 13 48 08" src="https://github.com/nina563/Pupil_lab_tracker_tutorial/assets/83282861/8755f306-0e6e-448c-bcf2-e48a13d75998">
 </p>
@@ -70,7 +72,7 @@ For defining the surface of the PC screen we use the April Tags 36H11 family. We
 #### Steps to process the video in the Pupil Cloud :
 1. Create a project in your workspace 
 2. Add recording to the project 
-3. On the project page, navigate to Enrichments, press “Create enrichment”, choose “Marker Mapper” and press create.
+3. On the project page, navigate to Enrichments, press `Create enrichment`, choose `Marker Mapper` and press **create**.
    
 >You might need to move a few frames forward or backward to get the April tags detected.
 >
@@ -80,11 +82,16 @@ For defining the surface of the PC screen we use the April Tags 36H11 family. We
 <img width="1440" alt="Screenshot 2024-02-14 at 13 54 09" src="https://github.com/nina563/Pupil_lab_tracker_tutorial/assets/83282861/ca8de90f-7db7-466e-848f-712c03563cc3">
 </p>
 
-4. After giving a name to the surface and defining it, press **Run** button on the top left corner to start the video processing. 
-5. At the end the mapped gaze data can be found for downloading at the **Downloads** tab under **Enrichment data**.
+4. After giving a name to the surface and defining it, press `Run` button on the top left corner to start the video processing. 
+5. At the end the mapped gaze data can be found for download at the `Downloads` tab under **Enrichment data**.
+
+<p align="center">
+  <img width="1439" alt="Screenshot 2024-02-14 at 15 03 07" src="https://github.com/nina563/Pupil_lab_tracker_tutorial/assets/83282861/eead8f52-560e-44ea-b47d-04578d417474">
+</p>
 
 ## Opensesame template <div id="heading--7"/>
 The provided Opensesame example experiment shows a viewer an image and the correspondent should choose if the image is AI-generated or real. The recording starts right before the instruction sketchpad is shown and ends after the last image. When the new image is shown, we save the timestamp of the event.
+
 
 #### Run the example file
 To run the example file: 
