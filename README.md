@@ -4,6 +4,11 @@ This tutorial shows how to create an experiment in Openseame with an integrated 
 ## Table of Contents
 1. [Resources](#heading--1)
 2. [Connecting to the eye-tracking device](#heading--2)
+3. [Starting the recording](#heading--3)
+4. [Saving events](#heading--4)
+5. [Stop the recording](#heading--5)
+6. [Processing the recordings](#heading--6)
+7. [Opensesame template](#heading--7)
 
 ## Resources <div id="heading--1"/>
 - ADD
@@ -33,27 +38,27 @@ print(f"Phone IP address: {device.phone_ip}")
 print(f"Phone name: {device.phone_name}")
 print(f"Phone unique ID: {device.phone_id}")
 ```
-## Starting the recording
+## Starting the recording <div id="heading--3"/>
 To start the recording you need to have this code in the “Run” phase of the **inline_script** item:
 ```
 recording_id = device.recording_start()
 print(f"Started recording with id {recording_id}”)
 ```
-## Saving events
+## Saving events <div id="heading--4"/>
 While recording is running, you can create events using the save_event. 
 ```
 device.send_event("test event 2", event_timestamp_unix_ns=time.time_ns())
 ```
 > Optionally, you can set a custom timestamp for your event, instead of using the time of the arrival, as in the example. 
 
-## Stop the recording 
+## Stop the recording <div id="heading--5"/>
 Use the recording_stop_and_save() method to stop the recording:
 ```
 device.recording_stop_and_save()
 device.close()
 ```
 
-## Processing the recordings 
+## Processing the recordings <div id="heading--6"/>
 After stopping and saving, the recording will automatically uploaded to the Pupil Cloud. For analysing the gaze data of the experiment participants, the data need to be mapped to the defined surface. Pupil Cloud enrichment [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/#surface-positions-csv) enables that. Further, the remapped gaze data can be downloaded in [CVS](https://docs.pupil-labs.com/neon/data-collection/data-format/) format. 
 
 For defining the surface of the PC screen we use the April Tags 36H11 family. We have 4 tags on the corners of the Opensesame canvas throughout the experiment.
@@ -78,7 +83,7 @@ For defining the surface of the PC screen we use the April Tags 36H11 family. We
 4. After giving a name to the surface and defining it, press **Run** button on the top left corner to start the video processing. 
 5. At the end the mapped gaze data can be found for downloading at the **Downloads** tab under **Enrichment data**.
 
-## Opensesame template 
+## Opensesame template <div id="heading--7"/>
 The provided Opensesame example experiment shows a viewer an image and the correspondent should choose if the image is AI-generated or real. The recording starts right before the instruction sketchpad is shown and ends after the last image. When the new image is shown, we save the timestamp of the event.
 
 #### Run the example file
