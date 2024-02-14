@@ -1,5 +1,5 @@
 # Pupil_lab_tracker_tutorial
-This tutorial shows how to create an experiment in Openseame with an integrated Pupil Lab eye-tracking device. You will use Python inline coding.
+This tutorial shows how to create an experiment in Openseame with an integrated Pupil Lab eye-tracking device. We use Python inline coding. The example of the Opensesame experiment with integrated tracker is provided.
 
 ## Table of Contents
 1. [Resources](#heading--1)
