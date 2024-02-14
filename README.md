@@ -2,18 +2,17 @@
 This tutorial shows how to create an experiment in Openseame with an integrated Pupil Lab eye-tracking device. We use Python inline coding. An example of the Opensesame experiment with an integrated tracker is provided.
 
 ## Table of Contents
-1. [Resources](#heading--1)
-2. [Connecting to the eye-tracking device](#heading--2)
-3. [Starting the recording](#heading--3)
-4. [Saving events](#heading--4)
-5. [Stop the recording](#heading--5)
-6. [Processing the recordings](#heading--6)
-7. [Opensesame template](#heading--7)
 
-## Resources <div id="heading--1"/>
-- ADD
+1. [Connecting to the eye-tracking device](#heading--1)
+2. [Starting the recording](#heading--2)
+3. [Saving events](#heading--3)
+4. [Stop the recording](#heading--4)
+5. [Processing the recordings](#heading--5)
+6. [Opensesame template](#heading--6)
+7. [Resources](#heading--7)
 
-## Connecting to the eye-tracking device <div id="heading--2"/>
+
+## Connecting to the eye-tracking device <div id="heading--1"/>
 
 To connect the laptop/PC to the tracker you will need to connect both devices to the same [local network](https://docs.pupil-labs.com/invisible/real-time-api/tutorials/). For discovery, the local network must allow MDNS and UDP traffic. In large public networks, this may be prohibited for security reasons. Alternatively, the hotspot can be created using a third device - neither the Companion phone nor the laptop you are using to run Opensesame.
 
@@ -38,27 +37,27 @@ print(f"Phone IP address: {device.phone_ip}")
 print(f"Phone name: {device.phone_name}")
 print(f"Phone unique ID: {device.phone_id}")
 ```
-## Starting the recording <div id="heading--3"/>
+## Starting the recording <div id="heading--2"/>
 To start the recording you need to have this code in the **Run** phase of the  `inline_script` item:
 ```
 recording_id = device.recording_start()
 print(f"Started recording with id {recording_id}”)
 ```
-## Saving events <div id="heading--4"/>
+## Saving events <div id="heading--3"/>
 While recording is running, you can create events using the save_event() method. 
 ```
 device.send_event("test event 2", event_timestamp_unix_ns=time.time_ns())
 ```
 > Optionally, you can set a custom timestamp for your event, instead of using the time of the arrival, as in the example. 
 
-## Stop the recording <div id="heading--5"/>
+## Stop the recording <div id="heading--4"/>
 Use the recording_stop_and_save() method to stop the recording:
 ```
 device.recording_stop_and_save()
 device.close()
 ```
 
-## Processing the recordings <div id="heading--6"/>
+## Processing the recordings <div id="heading--5"/>
 After stopping and saving, the recording will be automatically uploaded to the Pupil Cloud. For analysing the gaze data of the participants, the data need to be mapped to the defined surface. Pupil Cloud enrichment [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/#surface-positions-csv) enables that. Further, the remapped gaze data can be downloaded in [CVS](https://docs.pupil-labs.com/neon/data-collection/data-format/) format. 
 
 For defining the surface of the PC screen we use the April Tags 36H11 family. We have 4 tags on the corners of the Opensesame canvas throughout the experiment.
@@ -89,7 +88,7 @@ For defining the surface of the PC screen we use the April Tags 36H11 family. We
   <img width="1439" alt="Screenshot 2024-02-14 at 15 03 07" src="https://github.com/nina563/Pupil_lab_tracker_tutorial/assets/83282861/eead8f52-560e-44ea-b47d-04578d417474">
 </p>
 
-## Opensesame template <div id="heading--7"/>
+## Opensesame template <div id="heading--6"/>
 The provided Opensesame example experiment shows a viewer an image and the correspondent should choose if the image is AI-generated or real. The recording starts right before the instruction sketchpad is shown and ends after the last image. When the new image is shown, we save the timestamp of the event.
 
 
@@ -100,3 +99,14 @@ To run the example file:
 - Connect laptop/PC to the same local network as Neon companion device
 
 After that, you are ready to run the example experiment!
+
+## Resources <div id="heading--7"/>
+### Documentation
+
+1. [OpenSesame Python Manual](https://osdoc.cogsci.nl/4.0/manual/python/about/)
+     Official documentation for Python scripting in OpenSesame, providing detailed information about its usage and functionalities.
+3. [Pupil Labs Real-Time API Documentation](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/simple.html#simple-examples)
+     Detailed documentation for the Pupil Labs Real-Time API, including examples and usage instructions for interfacing with Pupil Labs eye tracking devices.
+
+### Support
+- Support from Pupil Labs - The Pupil Labs team provided valuable assistance and guidance during the development of this tutorial. 
