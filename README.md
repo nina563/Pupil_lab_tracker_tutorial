@@ -93,7 +93,7 @@ For defining the surface of the PC screen we use the April Tags 36H11 family. We
 The provided Opensesame example experiment shows a viewer an image and the correspondent should choose if the image is AI-generated or real. The recording starts right before the instruction sketchpad is shown and ends after the last image. When the new image is shown, we save the timestamp of the event.
 
 
-#### Run the example file
+### Run the example file
 To run the example file: 
 - You need to download the image folders (**fake**, **real**, **april_tag**) and save them to the same folder as the .osexp experiment file. 
 - Pip install the real-time API in the Opensesame console.
