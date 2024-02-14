@@ -2,15 +2,13 @@
 This tutorial shows how to create an experiment in Openseame with an integrated Pupil Lab eye-tracking device. You will use Python inline coding.
 
 ## Table of Contents
-1. [Resources](##Resources)
-2. [Connecting to the eye-tracking device](##Connecting to the eye-tracking device)
+1. [Resources](#heading--1)
+2. [Connecting to the eye-tracking device](#heading--2)
 
-
-## Resources
+## Resources <div id="heading--1"/>
 - ADD
 
-
-## Connecting to the eye-tracking device
+## Connecting to the eye-tracking device <div id="heading--2"/>
 
 To connect the laptop/PC to the tracker you will need to connect both devices to the same [local network](https://docs.pupil-labs.com/invisible/real-time-api/tutorials/). For discovery, the local network must allow MDNS and UDP traffic. In large public networks, this may be prohibited for security reasons. Alternitably the hotspot can be created using a third device - not the tracker phone or laptop you are using to run Opensesame.
 
