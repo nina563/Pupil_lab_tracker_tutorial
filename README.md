@@ -59,7 +59,7 @@ device.close()
 ```
 
 ## Processing the recordings <div id="heading--6"/>
-After stopping and saving, the recording will automatically uploaded to the Pupil Cloud. For analysing the gaze data of the experiment participants, the data need to be mapped to the defined surface. Pupil Cloud enrichment [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/#surface-positions-csv) enables that. Further, the remapped gaze data can be downloaded in [CVS](https://docs.pupil-labs.com/neon/data-collection/data-format/) format. 
+After stopping and saving, the recording will be automatically uploaded to the Pupil Cloud. For analysing the gaze data of the participants, the data need to be mapped to the defined surface. Pupil Cloud enrichment [Marker Mapper](https://docs.pupil-labs.com/neon/pupil-cloud/enrichments/marker-mapper/#surface-positions-csv) enables that. Further, the remapped gaze data can be downloaded in [CVS](https://docs.pupil-labs.com/neon/data-collection/data-format/) format. 
 
 For defining the surface of the PC screen we use the April Tags 36H11 family. We have 4 tags on the corners of the Opensesame canvas throughout the experiment.
 
