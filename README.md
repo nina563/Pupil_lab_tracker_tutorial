@@ -106,7 +106,7 @@ After that, you are ready to run the example experiment!
 1. [OpenSesame Python Manual](https://osdoc.cogsci.nl/4.0/manual/python/about/)
      Official documentation for Python scripting in OpenSesame, providing detailed information about its usage and functionalities.
 3. [Pupil Labs Real-Time API Documentation](https://pupil-labs-realtime-api.readthedocs.io/en/stable/examples/simple.html#simple-examples)
-     Detailed documentation for the Pupil Labs Real-Time API, including examples and usage instructions for interfacing with Pupil Labs eye tracking devices.
+     Detailed documentation for the Pupil Labs Real-Time API, including examples and usage instructions for interfacing with Pupil Labs eye-tracking devices.
 
 ### Support
 - Support from Pupil Labs - The Pupil Labs team provided valuable assistance and guidance during the development of this tutorial. 
