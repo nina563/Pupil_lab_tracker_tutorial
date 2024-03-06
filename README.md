@@ -18,9 +18,9 @@ To connect the laptop/PC to the tracker you will need to connect both devices to
 
 Pupil Lab provides a [real-time API](https://github.com/pupil-labs/realtime-network-api), that allows you to control the tracking device. 
 
-You can use pip to install the library through the Opensesame console:
+To work with the package, we install it through the Opensesame console:
 ```
-pip install pupil-labs-realtime-api
+pip install -r requirements.txt
 ```
 
 Opensesame provides `inline_script` item. We will use them to add Python code to the experiment body. Use further code snippet in the **Prepare** phase of the `inline_script` to initialize the tracking device. 
