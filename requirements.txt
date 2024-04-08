@@ -1,1 +1,3 @@
 pupil-labs-realtime-api
+numpy==1.24.3
+pillow==10.2.0
